@@ -12,4 +12,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Comando para ejecutar el script
-CMD ["python", "index.py"]
+CMD ["python", "-u", "index.py"]
