@@ -1,0 +1,14 @@
+version: "3"
+services:
+  python:
+    build: .
+    env_file: .env
+    container_name: python-parkingcuma
+    restart: always
+    environment:
+      TZ: Europe/Madrid
+    networks:
+      - web
+networks:
+  web:
+    external: true
