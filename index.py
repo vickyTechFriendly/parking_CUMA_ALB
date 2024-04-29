@@ -64,12 +64,12 @@ def publish_telemetry(dispositivo):
             'ocupacion': dispositivo['ocupacion'],
         }
         
-        url_telemetry = f'https://{plataforma}/api/v1/{dispositivo["accessToken"]}/telemetry'
+        url_telemetry = f'http://{plataforma}/api/v1/{dispositivo["accessToken"]}/telemetry'
         headers = {'Accept': 'application/json', 'Content-Type': 'application/json'}
         requests.post(url_telemetry, json=telemetry_data, headers=headers)
 
         attribute_data = {'totales': dispositivo['totales']}
-        url_attributes = f'https://{plataforma}/api/v1/{dispositivo["accessToken"]}/attributes'
+        url_attributes = f'http://{plataforma}/api/v1/{dispositivo["accessToken"]}/attributes'
         requests.post(url_attributes, json=attribute_data, headers=headers)
 
         print(f"¡Datos de {dispositivo['nombre']} enviados correctamente como telemetría y atributos!")
